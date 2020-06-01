@@ -1,7 +1,6 @@
 import tweepy
 import logging
 from config import create_api
-import json
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -11,6 +10,7 @@ class RetweetListener(tweepy.StreamListener):
     def __init__(self, api):
         tweepy.StreamListener.__init__(self)
         self.api = api
+        # me() method returns the user whose authentication keys were used.
         self.me = api.me()
 
     def on_status(self, tweet):
