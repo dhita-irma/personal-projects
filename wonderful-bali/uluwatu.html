@@ -1,62 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Uluwatu</title>
-    <link rel="icon" type="image" href="https://image.flaticon.com/icons/svg/1090/1090675.svg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful Bali</title>
+    <link rel="icon" type="image" href="images/icon.svg">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Wonderful Bali</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="index.html"> Wonderful Bali</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="activity.html">Things To Do</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Guide
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="guide.html">Best Time To Go</a>
+                        <a class="dropdown-item" href="guide.html#get-around">How To Get there</a>
+                    </div>
                 </li>
+
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Where To Stay
+                        Destinations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="kuta.html">Kuta</a>
                         <a class="dropdown-item" href="ubud.html">Ubud</a>
                         <a class="dropdown-item" href="uluwatu.html">Uluwatu</a>
-                        <a class="dropdown-item" href="kuta.html">Kuta</a>
-                        <a class="dropdown-item" href="nusadua.html">Nusa Dua</a>
                     </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="itinerary.html">Itinerary</a>
                 </li>
             </ul>
         </div>
     </nav>
+    <br>    
 
-    <img src="images/suluban-beach.jpg" class="header" alt="Monkey Forest">
+    <!----Opening Article--->
+    <div class="title">
+        <h1 class="display-4 text-center" >Uluwatu</h1>
+        <hr>
+    </div>
 
-    <h1>Uluwatu</h1>
+    <div class="container-fluid">
+        <div class="row padding">
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+                <img src="images/suluban-beach.jpg" class="img-fluid" alt="Anantara Uluwatu">
+            </div>
+        </div>
+    </div>
 
+    <div class="container-fluid padding">
+        <div class="row article">
+            <div class="col-md-12 col-lg-5 offset-lg-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac suscipit ligula, non tincidunt mauris. Mauris vel elit
+                varius, dignissim mi in, elementum ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                turpis egestas. Nunc fringilla leo ac tempus pharetra. Donec sem justo, volutpat a varius a, vestibulum vitae lacus.
+                Praesent ut congue tortor. Nunc nibh purus, facilisis at tortor ut, consequat bibendum erat. Aliquam erat volutpat. Ut
+                tempor justo tellus, sit amet rutrum massa ultrices ac. Nulla facilisi. Suspendisse in sem sit amet est blandit
+                faucibus. Integer nisi sapien, dapibus non iaculis id, auctor sed sem. Praesent vitae neque aliquam ligula dictum
+                hendrerit maximus sed neque. Phasellus scelerisque efficitur dui, nec placerat lorem volutpat at. Sed quis mauris augue.
+            </p>
+            </div>
+            <div class="col-md-12 col-lg-5">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac suscipit ligula, non tincidunt mauris. Mauris vel elit
+                varius, dignissim mi in, elementum ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                turpis egestas. Nunc fringilla leo ac tempus pharetra. Donec sem justo, volutpat a varius a, vestibulum vitae lacus.
+                Praesent ut congue tortor. Nunc nibh purus, facilisis at tortor ut, consequat bibendum erat. Aliquam erat volutpat. Ut
+                tempor justo tellus, sit amet rutrum massa ultrices ac. Nulla facilisi. Suspendisse in sem sit amet est blandit
+                faucibus. Integer nisi sapien, dapibus non iaculis id, auctor sed sem. Praesent vitae neque aliquam ligula dictum
+                hendrerit maximus sed neque. Phasellus scelerisque efficitur dui, nec placerat lorem volutpat at. Sed quis mauris augue.
+            </p>
+            </div>
+        </div>
+        </div>
+        <br> <br>
+
+    <!---Activity Section--->
+    <div id="uluwatu-activity" class="title">
+        <h1 class="display-4 text-center" >Top Things To Do</h1>
+        <hr>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row article padding text-center">
+            <div class="col-md-12 col-lg-8 offset-lg-2">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac suscipit ligula, non tincidunt mauris. Mauris vel elit
+                    varius, dignissim mi in, elementum ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                    turpis egestas. Nunc fringilla leo ac tempus pharetra. Donec sem justo, volutpat a varius a, vestibulum vitae lacus.
+                    Praesent ut congue tortor. Nunc nibh purus, facilisis at tortor ut, consequat bibendum erat. Aliquam erat volutpat. Ut
+                    tempor justo tellus, sit amet rutrum massa ultrices ac. Nulla facilisi.
+                </p>
+            </div>
+        </div>
+    </div>
     
+    <div class="container-fluid padding">
+        <div class="row">
+            <div class="col-md-12 col-lg-10 offset-lg-1">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h4>Hit the Uluwatu Beaches</h4>
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <img src="images/suluban-beach-2.jpg" class="img-fluid img-collapsible img-thumbnail" alt="Suluban Beach">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                            sustainable VHS. 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h4>Learn to Surf</h4>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <img src="images/surfing.jpg" class="img-fluid img-collapsible img-thumbnail" alt="Surfing">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h4>Visit the Abadoned Plane</h4>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <img src="images/abandoned-plane.jpg" class="img-fluid img-collapsible img-thumbnail" alt="Abandoned Plane">
+                        <div class="card-body">
+                            An abandoned airplane in the middle of a random field! Who wouldn’t want to play around in an Aeroplane graveyard?
+                            We’re not sure you can go down and explore, or at least we had no luck when we visited, but it sure does make for an amazing photo and one of the more different things to do in Uluwatu.
+                            A lot of rumours say it was bought in pieces by a westerner and put together to be turned into a fully functioning restaurant. However, as you can see, the project was never finished but it still stands as one of the hidden gems of Bali.                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
 
+    <!---Hotels Section--->
+    <div id="uluwatu-hotels" class="title">
+        <h1 class="display-4 text-center" >Best Hotels and Resorts</h1>
+        <hr>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row article padding text-center">
+            <div class="col-md-12 col-lg-8 offset-lg-2">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac suscipit ligula, non tincidunt mauris. Mauris vel elit
+                    varius, dignissim mi in, elementum ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                    turpis egestas. Nunc fringilla leo ac tempus pharetra.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-12 col-lg-10 offset-lg-1">
+                <div class="card-deck">
+                    <div class="card text-center">
+                        <img src="images/six-senses-ulu.jpg" class="card-img-top" alt="Six Senses Uluwatu">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Six Senses Uluwatu</h5>
+                            <p class="card-text">
+                                Located on top of the cliffs at the southernmost tip of Bali where the site of Pura Uluwatu is located, the sacred
+                                temple considered one of the island’s core spiritual pillars. Here, tradition mixes with beautiful beaches, great surf
+                                breaks and an eclectic wellness and dining scene. 
+                            </p>
+                            <a href="https://www.sixsenses.com/en/resorts/uluwatu-bali" target="_blank" class="btn btn-info mt-auto">Visit Website</a>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <img src="images/anantara-uluwatu.jpg" class="card-img-top" alt="Anantara Uluwatu">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Anantara Aluwatu</h5>
+                            <p class="card-text">
+                                Anantara Uluwatu Bali Resort unfolds on a dramatic cliffside over the Indian Ocean. Terraced architecture ensures ocean
+                                views from every angle. Dine, swim and Jacuzzi against a panorama of sunset at our Bali resort’s luxurious Suites. Ride
+                                the waves of the famous Impossible Beach below. </p>
+                            <a href="https://www.anantara.com/en/uluwatu-bali" target="_blank" class="btn btn-info mt-auto">Visit Website</a>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <img src="images/alila-uluwatu.jpg" class="card-img-top" alt="Alila Villas Uluwatu">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Alila Villas Uluwatu</h5>
+                            <p class="card-text">
+                                Poised on an elevated plateau that meets with limestone cliffs sweeping down to the cerulean Indian Ocean, the view from
+                                Alila Villas Uluwatu showcases nothing less than nature's perfection. Alila Villas Uluwatu designed in harmony with fully 
+                                respecting the natural environment.
+                            </p>
+                            <a href="https://www.alilahotels.com/uluwatu" target="_blank" class="btn btn-info mt-auto">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> <br>
+
+     <!---Footer--->
+     <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-8" style="font-size: small;">
+                    <br><br>
+                    <hr class="light">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat lorem lacus, non placerat eros rutrum vel.
+                        Nam rutrum tincidunt lorem et sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti
+                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                    <hr class="light">
+                </div>
+                <div class="col-md-4" style="font-size: small";>
+                    <hr class="light">
+                    <h4 style="font-weight: bold;">Wonderful Bali</h4>
+                    <hr class="light">
+                    <p>Created by Dhita Irma <br>for Project0 of CS50W</p>
+                    <p>github: dhita-irma</p>
+                    <p>dhita.irma@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
