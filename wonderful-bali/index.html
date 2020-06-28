@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Wonderful Bali</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful Bali</title>
     <link rel="icon" type="image" href="images/icon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Wonderful Bali</a>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="index.html"> Wonderful Bali</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -53,6 +53,7 @@
         </div>
     </nav>
 
+    <!-- Image Slider-->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -62,12 +63,30 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" src="images/img1.jpg" alt="First slide">
+                <div class="carousel-caption">
+                    <h1 class="display-2" style="color: white;">Bali</h1>
+                    <h3>The Island of Gods</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Destinations </button>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Itineraries </button>
+                </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/ulun-danu-temple.jpg" alt="Second slide">
+                <div class="carousel-caption">
+                    <h1 class="display-2" style="color: white;">Bali</h1>
+                    <h3>The Island of Gods</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Destinations </button>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Itineraries </button>
+                </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/img3.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                    <h1 class="display-2" style="color: white;">Bali</h1>
+                    <h3>The Island of Gods</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Destinations </button>
+                    <button type="button" class="btn btn-outline-light btn-lg"> Itineraries </button>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -81,15 +100,153 @@
     </div>
 
     <br>
-    <h1>Bali, Indonesia</h1>
 
-    <p class="text-center">
-        Also known as the Land of the Gods, Bali appeals through its sheer natural beauty of looming volcanoes and lush
-        terraced rice fields that exude peace and serenity.
-        It is also famous for surfers’ paradise! Bali enchants with its dramatic dances and colorful ceremonies, its
-        arts, and crafts, to its luxurious beach resorts and exciting nightlife.
-        And everywhere, you will find intricately carved temples.
-    </p>
+    <!--- Title Section --->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12" style="padding: 0%;">
+                <h1 class="display-4" >Wonderful Bali</h1>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                <hr>
+                <p class="lead">
+                    Also known as the Land of the Gods, Bali appeals through its sheer natural beauty of looming volcanoes and lush terraced
+                    rice fields that exude peace and serenity. It is also famous for surfers’ paradise! Bali enchants with its dramatic
+                    dances and colorful ceremonies, its arts, and crafts, to its luxurious beach resorts and exciting nightlife. And
+                    everywhere, you will find intricately carved temples.
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!--- Two Columns Section--->
+    <div class="container-fluid padding">
+        <div class="row padding text-justify" style="font-size: 18px;">
+            <div class="col-md-12 col-lg-5 offset-lg-1">
+                <p>
+                    There is no other place like Bali giving you so many choices of literally everything holiday related that you can
+                    imagine - variety variety variety. Bali is rated as one of the best travel destinations in the world by countless
+                    websites, review portals and travel magazines each year - for very good reasons. Not everything is perfect on this
+                    island and some aspects still need to improve or change or to be taken care of by the government. But even Bali's
+                    imperfections have their charm at times. If you spare some time for us, we will explain what you can expect (and what
+                    not) so that you can be sure your visit will be an amazing experience. Bali is diverse and complex and it's good to
+                    understand a bit more about this island before booking your hotel.
+                </p>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <p>
+                    And, there is something else that touched the hearts and souls of millions who came here before you. There is a special
+                    vibe, an essence, something authentic that is difficult to describe, which has touched and inspired travelers, artists,
+                    seekers and entrepreneurs from all over the world since decades. It has something to do with the Balinese themselves and
+                    their warm and welcoming character, their openness, their amazing and loving spirit. You have to experience it to
+                    believe it. The level of tolerance, respect and the freedom you can enjoy to be and explore yourself - it is truly
+                    magical. Bali allows you to be who you want to be. And that's a feeling that is priceless in itself.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!--- Menu Section --->
+    <div class="container-flud padding">
+        <div class="row started text-center padding">
+            <div class="col-12">
+                <h1 class="display-4">Get Started</h1>
+            <hr>
+        </div>
+        </div>
+    </div>
+
+    <!--- Menu Buttons --->
+    <div class="container-fluid padding">
+        <div class="row get-started text-center padding">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a href="guide.html"><i class="far fa-map"></i></a>
+                <h3>Guide</h3>
+                <p>The best time to visit bali and how to get around</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                <h3>Destinations</h3>
+                <p>Top things to do in bali and the best hotels to stay at</p>
+            </div>
+            <div class="col-sm-12 col-md-12 mx-md-auto col-lg-4">
+                <a href="#"><i class="far fa-list-alt"></i></a>
+                <h3>Itineraries</h3>
+                <p>3 Days and 7 Days itinerary planning</h7>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Destinations -->
+    <div class="container-fluid padding">
+        <div class="row destinations  padding">
+            <a href="kuta.html"><div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="images/la-plancha.jpg">
+                    <div class="card-body">
+                        <h2 class="card-title">Kuta</h2>
+                    </div>
+                </div>
+            </a></div>
+            <a href="ubud.html"> <div class="col-md-4 col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="images/tegalallang-rice.jpg">
+                    <div class="card-body">
+                        <h2 class="card-title">Ubud</h2>
+                    </div>
+                </div>
+            </a></div>
+            <a href="uluwatu.html"><div class="col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top" src="images/suluban-beach-ori.jpg">
+                        <div class="card-body">
+                            <h2 class="card-title">Uluwatu</h2>
+                        </div>
+                    </div>
+            </a></div>
+        </div>
+    </div>
+
+    <!---Connect--->
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2 class="display-4">Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>        
+            </div>
+        </div>
+    </div>
+
+    <!---Footer--->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-8" style="font-size: small;">
+                    <br><br>
+                    <hr class="light">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat lorem lacus, non placerat eros rutrum vel.
+                        Nam rutrum tincidunt lorem et sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti
+                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                    <hr class="light">
+                </div>
+                <div class="col-md-4" style="font-size: small";>
+                    <hr class="light">
+                    <h4 style="font-weight: bold;">Wonderful Bali</h4>
+                    <hr class="light">
+                    <p>Created by Dhita Irma <br>for Project0 of CS50W</p>
+                    <p>github: dhita-irma</p>
+                    <p>dhita.irma@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-
 </html>
