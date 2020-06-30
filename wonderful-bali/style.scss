@@ -1,0 +1,290 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/*--- Navbar ---*/
+.navbar {
+    .navbar-brand {
+        font-size: 28px;
+        font-weight: 780;
+    }
+    .navbar-nav li {
+        padding-right: 20px;
+    }
+    .nav-link {
+        font-size: larger;
+    }
+}
+
+/*--- Carousel ---*/
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h1 {
+        font-size: 500%;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px #000;
+    
+    }
+    h3 {
+        font-size: 200%;
+        font-weight: 500;
+        text-shadow: 1px 1px 15px #000;
+        padding-bottom: 3px;
+    
+    }
+}
+
+/*--- Article Columns ---*/
+.welcome hr {
+    border-top: 1px solid #b4b4b4;
+    width: 75%;
+    margin-top: 0%;
+}
+.title hr {
+    border-top: 1px solid #b4b4b4;
+    width: 50%;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+.padding {
+    padding-bottom: 10px;
+}
+
+.started hr {
+    border-top: 1px solid #b4b4b4;
+    width: 60%;
+    margin-top: 0%;
+}
+div.article {
+    text-align: justify;
+    font-size: 18px;
+}
+
+/*---Article Images---*/
+.img-fluid {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.img-collapsible {
+    width: 30%;
+    float: left;
+    margin: 20px;
+}
+
+/*--- Get Started Buttons ---*/
+%get-started {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.fa-map {
+    @extend %get-started;
+    color: #50bd22;
+    :hover {
+        color: #1d4f09;
+    }
+}
+
+.fa-map-marker-alt {
+    @extend %get-started;
+    color: red;
+    :hover {
+        color: maroon;
+    }
+}
+
+.fa-list-alt {
+    @extend %get-started;
+    color: #2990f0;
+    :hover {
+        color: #0f3d87;
+    }
+}
+
+/*--- Destination Cards ---*/
+#top-destinations {
+    .card {
+        opacity: 75%;
+        border-radius: 15px;
+    }
+    .card:hover {
+        opacity: 100%;
+        border: 1px solid lightgrey;
+        box-shadow: 0px 0px 10px gray;    
+    }
+}
+
+/*--- Social Buttons ---*/
+%grey-hover {
+    :hover {
+        color: #d5d5d5;
+    }
+}
+
+.social a {
+    font-size: 25px;
+    padding: 20px;
+}
+
+.fa-facebook {
+    color: #3b5998;
+    @extend %grey-hover
+}
+
+.fa-twitter {
+    color: #00aced;
+    @extend %grey-hover
+}
+
+.fa-instagram {
+    color: #de43d6;
+    @extend %grey-hover
+}
+
+/* ---FOOTER ---*/
+footer {
+    background-color: #6e737a;
+    color: #d5d5d5;
+    padding-top: 10px;
+    h4 {
+        color: white;
+    }
+    .light {
+        border-top: 1px solid #d5d5d5;
+        width: 75%;
+        margin-top: 10px;
+        margin-bottom: 10px;    
+    }
+}
+
+/*--- Hotel Cards ---*/
+.btn-info {
+    opacity: 85%;  
+}
+.btn-info:hover {
+    opacity: 100%;
+    box-shadow: 0px 0px 10px gray;
+}
+
+/*--- Itinerary Timeline ---*/
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+img.round {
+    border-radius: 8px;
+}
+h5.subtitle, h6.subtitle{
+    color: #22c0e8;
+}
+
+/*--- Media Queries ---*/
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 50%;
+        h1 {
+            font-size: 350%;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px #000;
+        }
+        h3 {
+            font-size: 140%;
+            font-weight: 400;
+            text-shadow: 1px 1px 15px #000;
+            padding-bottom: 5px;
+        }
+        .btn {
+            font-size: 90%;
+            padding: 5px 14px;
+        }
+    }
+    .display-4 {
+        font-size: 20px;
+    }
+    .img-collapsible {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        bottom: 20%;
+        h1 {
+            font-size: 300%;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px #000;
+        }
+        h3 {
+            font-size: 100%;
+            font-weight: 500;
+            padding-bottom: 5px;
+        }
+        .btn {
+            display: none;
+        }
+    }
+    .img-collapsible {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .padding {
+        padding-bottom: 0px;
+    }
+    .title hr {
+        width: 75%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    .title .display-4 {
+        font-size: 40px;
+    }
+    .welcome .display-4{
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .destinations div {
+        margin:0 -10% 0 10%;
+    }
+}
