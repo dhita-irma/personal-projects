@@ -44,7 +44,7 @@ html, body {
 /*--- Article Columns ---*/
 .welcome hr {
     border-top: 1px solid #b4b4b4;
-    width: 95%;
+    width: 75%;
     margin-top: 0%;
 }
 .title hr {
@@ -88,6 +88,7 @@ div.article {
 }
 .fa-map:hover {
     color: #1d4f09;
+    text-shadow: 0 0 10px red;
 }
 .fa-map-marker-alt {
     color: red;
@@ -157,7 +158,7 @@ hr.light {
 #top-destinations .card:hover {
     opacity: 100%;
     border: 1px solid grey;
-    box-shadow: 3px 3px 3px lightgrey;
+    box-shadow: 0px 0px 10px gray;
 }
 /* -----------------------
 --- ITINERARY TIMELINE ---
