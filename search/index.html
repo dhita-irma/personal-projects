@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google</title>
+        <link rel="icon" type="image" href="google-icon.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    <body>
+        <!-- Navigation Bar-->
+        <nav class="navbar navbar-expand-md sticky-top">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="image-search.html">Image Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="advanced-search.html">Advanced Search</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        <!---Google Logo -->
+        <div class="container-fluid center">
+            <div class="row padding col-sm-12 col-md-6 offset-md-3 vertical-center" style="padding-top: 160px;">
+                <img src="google-logo.png" class="center">
+            </div>
+        </div>
+
+        <!--- Search Box --->
+
+        <div class="container-fluid">
+            <form action="https://www.google.com/search" method="get" autocomplete="off">
+                <div class="row rounded-box" style="margin: 0 auto;">
+                    <i class="fas fa-search search-grey"></i>
+                    <input name="q" type="text" placeholder="Search" class="input-box" autofocus="autofocus">
+                    <img src="search-by-voice.jpg" id="voice-icon-right">
+                </div>
+                <div class="row padding">
+                    <input name="search" type="submit" class="button" value="Google Search">
+                    <input name="btnI" type="submit" class="button" value="I'm Feeling Lucky">
+                </div>
+                </div>
+            </form>
+        </div>
+</html>

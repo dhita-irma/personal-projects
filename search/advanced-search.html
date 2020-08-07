@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Advanced Search</title>
+        <link rel="icon" type="image" href="google-icon.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md sticky-top bg-grey">
+        <a class="navbar-brand" href="index.html"><img src="google-logo.png"></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Google Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+            
+        <!--- Advanced Search --->
+        <div class="red-title">
+            Advanced Search
+        </div>
+        <hr>
+
+        <div class="container padding">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" style="font-size: large;">Find pages with...</label>
+                <div class="col-sm-5">
+                </div>
+                <div class="col-sm-4 text-muted" id="hint">
+                        To do this in the search box.
+                </div>
+            </div>
+            <form action="https://www.google.com/search" method="get" autocomplete="off">
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">all these words:</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="inputPassword" name="as_q" autofocus="autofocus">
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="text-muted">
+                            Type the important words: tri-colour rat terrier
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">this exact word or phrase:</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="inputPassword" name="as_epq">
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="text-muted">
+                            Put exact words in quotes: "rat terrier"
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-lg-3 col-form-label">any of these words:</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="inputPassword" name="as_oq">
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="text-muted">
+                            Type OR between all the words you want: miniature OR standard
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">none of these words:</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="inputPassword" name="as_eq">
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="text-muted">
+                            Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <input type="submit" value="Advanced Search" class="btn btn-primary float-right" id="advanced-button">
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        
+        
+        
+    </body>
+</html>
