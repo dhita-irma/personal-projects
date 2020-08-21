@@ -1,0 +1,153 @@
+/*--- Navigation bar ---*/
+.navbar {
+    background-color: white;
+    
+    .nav-link {
+        color: black;
+    }
+}
+
+.bg-grey {
+    background-color: #ededed;
+}
+
+.navbar-brand img {
+    width: 92px;
+}
+
+.red-title {
+    color: red;
+    font-weight: 450;
+    font-size: larger;
+    margin-left: 60px;
+    padding-top: 20px;
+}
+
+.padding {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hint {
+    color: grey;
+    font-weight: bold;
+    font-size: small;
+    padding-top: 10px;
+}
+
+small {
+    padding-top: 20px;
+}
+/*--- Rounded Input Box ---*/
+.rounded-box {
+    background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 26px;
+    z-index: 3;
+    height: 52px;
+    margin: 0 auto;
+    width: 650px;
+}
+
+.rounded-box:hover {
+    box-shadow: 0px 0px 10px lightgrey;
+    border: 1px solid white;  
+}
+
+/*--- Input Box ---*/
+%input-box {
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    margin-top: 2px;
+    outline: none;
+    font-size: 16px;
+    height: 45px;
+}
+
+.input-box {
+    @extend %input-box;
+    width: 530px;
+}
+
+.input-box-img {
+    @extend %input-box;
+    width: 450px;
+    border: none;
+}
+
+/*--- Icons ---*/
+%voice-icon {
+    height: 25px;
+    margin-top: 12px;
+}
+
+.search-grey {
+    color: grey;
+    height: 50px;
+    margin-left: 25px;
+}
+
+#search-blue {
+    color: #4b63de;
+    height: 50px;
+    margin-right: 25px;
+}
+
+#voice-icon-right {
+    @extend %voice-icon;
+    margin-right: 25px;
+}
+
+#voice-icon-middle {
+    @extend %voice-icon;
+    margin-right: 20px;
+}
+
+#camera-left {
+    color: grey;
+    height: 50px;
+    width: 20px;
+    margin-right: 20px;
+}
+
+/*--- Submit Buttons ---*/
+input[name="search"] {
+    margin-left: auto;
+    margin-right: 7px;
+}
+
+input[name="btnI"] {
+    margin-right: auto;
+    margin-left: 7px;
+}
+
+.button {
+    height: 38px;
+    background-color: #e6e3e3;
+    border-radius: 5px;
+    border: 1px solid #e6e3e3;
+    padding: 5px 10px 5px 10px;
+}
+
+.button:hover {
+    background-image: linear-gradient(#f5f5f5, #f1f1f1);
+    border: 1px solid lightgray;
+}
+
+@media (max-width: 992px) {
+    #hint {
+        display: none;
+    }
+
+    #advanced-button {
+        margin-top: 15px;
+    }
+}
