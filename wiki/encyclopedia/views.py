@@ -12,7 +12,8 @@ def index(request):
     })
 
 def entry(request, title):
-    if title in entries:
+    entries = [x.lower() for x in util.list_entries()]
+    if title.lower() in entries:
         return render(request, "encyclopedia/entry.html", {
             "content": markdowner.convert(str(util.get_entry(title))),
             "title": title
