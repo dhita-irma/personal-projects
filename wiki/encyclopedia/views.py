@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, render
 from markdown2 import Markdown
 from . import util
 
@@ -20,3 +21,15 @@ def entry(request, title):
         })
     else:
         return render(request, "encyclopedia/error.html" )
+
+def search(request):
+    if request.method == "GET":
+        q = request.GET.get("q")
+        if q in entries:
+            return HttpResponseRedirect(f"/{q}")
+        else:
+            results = [entry for entry in entries if q in entry]
+            return render(request, "encyclopedia/search.html", {
+                "q": q,
+                "results": results 
+            })
