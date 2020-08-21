@@ -19,17 +19,15 @@ def entry(request, title):
             "content": markdowner.convert(str(util.get_entry(title))),
             "title": title
         })
-    else:
-        return render(request, "encyclopedia/error.html" )
+    return render(request, "encyclopedia/error.html" )
 
 def search(request):
     if request.method == "GET":
         q = request.GET.get("q")
-        if q in entries:
-            return HttpResponseRedirect(f"/{q}")
-        else:
+        if q not in entries:
             results = [entry for entry in entries if q in entry]
             return render(request, "encyclopedia/search.html", {
-                "q": q,
-                "results": results 
+                "results": results, 
+                "len": len(results)
             })
+        return HttpResponseRedirect(f"/{q}")
