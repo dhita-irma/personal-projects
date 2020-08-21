@@ -1,7 +1,8 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from markdown2 import Markdown
 from . import util
+import random
 
 markdowner = Markdown()
 
@@ -31,3 +32,7 @@ def search(request):
                 "len": len(results)
             })
         return HttpResponseRedirect(f"/{q}")
+
+def random_page(request):
+    entry = random.choice(entries)
+    return HttpResponseRedirect(f"/{entry}")
