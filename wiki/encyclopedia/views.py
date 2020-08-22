@@ -1,4 +1,5 @@
-from django.http import HttpResponseRedirect
+from django import forms
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from markdown2 import Markdown
 from . import util
@@ -14,8 +15,7 @@ def index(request):
     })
 
 def entry(request, title):
-    entries = [x.lower() for x in util.list_entries()]
-    if title.lower() in entries:
+    if title.lower() in [entry.lower() for entry in entries]:
         return render(request, "encyclopedia/entry.html", {
             "content": markdowner.convert(str(util.get_entry(title))),
             "title": title
@@ -25,8 +25,8 @@ def entry(request, title):
 def search(request):
     if request.method == "GET":
         q = request.GET.get("q")
-        if q not in entries:
-            results = [entry for entry in entries if q in entry]
+        if q.lower() not in entries:
+            results = [entry for entry in entries if q.lower() in entry.lower()]
             return render(request, "encyclopedia/search.html", {
                 "results": results, 
                 "len": len(results)
@@ -35,7 +35,11 @@ def search(request):
 
 def create(request):
     if request.method == "POST":
-        pass
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+        if title in entries:
+            return render(request, "encyclopedia/error.html")
+        return HttpResponse("Ready to Create New Page")
     return render(request, "encyclopedia/create.html")
 
 def random_page(request):
