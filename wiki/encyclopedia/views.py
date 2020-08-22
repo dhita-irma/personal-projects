@@ -33,6 +33,11 @@ def search(request):
             })
         return HttpResponseRedirect(f"/{q}")
 
+def create(request):
+    if request.method == "POST":
+        pass
+    return render(request, "encyclopedia/create.html")
+
 def random_page(request):
     entry = random.choice(entries)
     return HttpResponseRedirect(f"/{entry}")
