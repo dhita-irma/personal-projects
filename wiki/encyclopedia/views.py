@@ -1,6 +1,7 @@
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from markdown2 import Markdown
 from . import util
 import random
@@ -31,7 +32,7 @@ def search(request):
                 "results": results, 
                 "len": len(results)
             })
-        return HttpResponseRedirect(f"/{q}")
+        return redirect(f"/wiki/{q}")
 
 def create(request):
     if request.method == "POST":
@@ -44,4 +45,4 @@ def create(request):
 
 def random_page(request):
     entry = random.choice(entries)
-    return HttpResponseRedirect(f"/{entry}")
+    return redirect(f"/wiki/{entry}")
