@@ -1,18 +1,15 @@
-from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from markdown2 import Markdown
 from . import util
+from . import forms
 import random
 
 markdowner = Markdown()
 entries = util.list_entries()
 entries_lowercaps = [entry.lower() for entry in entries]
 
-class NewEntryForm(forms.Form):
-    title = forms.CharField(label="Title")
-    body = forms.CharField(label="Content", widget=forms.Textarea)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -46,7 +43,7 @@ def create(request):
             return render(request, "encyclopedia/error.html")
         return HttpResponse("Ready to Create New Page")
     return render(request, "encyclopedia/create.html", {
-        "form": NewEntryForm()
+        "form": forms.NewEntryForm()
     })
 
 def random_page(request):
