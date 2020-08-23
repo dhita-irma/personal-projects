@@ -10,7 +10,7 @@ Create New Page
 <h1 style="text-align: center;">Create New Entry</h1>
 <br>
 
-<form>
+<form action="{% url 'create' %}" method="POST">
     {% csrf_token %}
     {% crispy form %}
 </form>

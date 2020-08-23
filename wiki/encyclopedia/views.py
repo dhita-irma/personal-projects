@@ -4,6 +4,7 @@ from django.urls import reverse
 from markdown2 import Markdown
 from . import util
 from . import forms
+import os
 import random
 
 markdowner = Markdown()
@@ -37,11 +38,26 @@ def search(request):
 
 def create(request):
     if request.method == "POST":
-        title = request.POST.get("title")
-        content = request.POST.get("content")
-        if title in entries:
-            return render(request, "encyclopedia/error.html")
-        return HttpResponse("Ready to Create New Page")
+        form = forms.NewEntryForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data["title"]
+            body = form.cleaned_data["body"]
+            if title.lower() in entries_lowercaps:
+                return HttpResponse("Sorry, the entry is already exist")
+            else:
+                filepath = os.path.join("entries", f"{title}.md")
+                f = open(filepath, "w")
+                f.write(body)
+                f.close()
+                return render(request, "encyclopedia/entry.html", {
+                    "content": markdowner.convert(str(util.get_entry(title))),
+                    "title": title
+                })
+        else:
+            return render(request, 'encyclopedia/create.html', {
+                "form": form
+            })
+
     return render(request, "encyclopedia/create.html", {
         "form": forms.NewEntryForm()
     })
