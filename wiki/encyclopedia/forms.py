@@ -16,7 +16,7 @@ class NewEntryForm(forms.Form):
             Div(
                 Field('title', placeholder='Enter Title', autocomplete='off'),
                 Field('body', placeholder='Enter Page Content'), 
-                Submit('submit', 'Create Entry', css_class='btn btn-primary float-right'), 
+                Submit('submit', 'Save Entry', css_class='btn btn-primary float-right'), 
                 css_class='form-group col-8 offset-2'
             )
         )
