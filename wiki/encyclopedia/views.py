@@ -7,9 +7,12 @@ from . import util
 import random
 
 markdowner = Markdown()
-
 entries = util.list_entries()
 entries_lowercaps = [entry.lower() for entry in entries]
+
+class NewEntryForm(forms.Form):
+    title = forms.CharField(label="Title")
+    body = forms.CharField(label="Content", widget=forms.Textarea)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -42,7 +45,9 @@ def create(request):
         if title in entries:
             return render(request, "encyclopedia/error.html")
         return HttpResponse("Ready to Create New Page")
-    return render(request, "encyclopedia/create.html")
+    return render(request, "encyclopedia/create.html", {
+        "form": NewEntryForm()
+    })
 
 def random_page(request):
     entry = random.choice(entries)
