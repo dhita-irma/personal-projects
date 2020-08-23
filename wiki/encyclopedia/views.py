@@ -9,6 +9,7 @@ import random
 markdowner = Markdown()
 
 entries = util.list_entries()
+entries_lowercaps = [entry.lower() for entry in entries]
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -16,7 +17,7 @@ def index(request):
     })
 
 def entry(request, title):
-    if title.lower() in [entry.lower() for entry in entries]:
+    if title.lower() in entries_lowercaps:
         return render(request, "encyclopedia/entry.html", {
             "content": markdowner.convert(str(util.get_entry(title))),
             "title": title
@@ -26,13 +27,13 @@ def entry(request, title):
 def search(request):
     if request.method == "GET":
         q = request.GET.get("q")
-        if q.lower() not in entries:
+        if q.lower() not in entries_lowercaps:
             results = [entry for entry in entries if q.lower() in entry.lower()]
             return render(request, "encyclopedia/search.html", {
                 "results": results, 
                 "len": len(results)
             })
-        return redirect(f"/wiki/{q}")
+        return redirect(reverse("entry", args=[q]))
 
 def create(request):
     if request.method == "POST":
@@ -45,4 +46,4 @@ def create(request):
 
 def random_page(request):
     entry = random.choice(entries)
-    return redirect(f"/wiki/{entry}")
+    return redirect(reverse("entry", args=[entry]))
