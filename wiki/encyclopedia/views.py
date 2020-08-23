@@ -42,9 +42,7 @@ def create(request):
         if form.is_valid():
             title = form.cleaned_data["title"]
             body = form.cleaned_data["body"]
-            if title.lower() in entries_lowercaps:
-                return HttpResponse("Sorry, the entry is already exist")
-            else:
+            if title.lower() not in entries_lowercaps:
                 filepath = os.path.join("entries", f"{title}.md")
                 f = open(filepath, "w")
                 f.write(body)
@@ -53,11 +51,17 @@ def create(request):
                     "content": markdowner.convert(str(util.get_entry(title))),
                     "title": title
                 })
-        else:
             return render(request, 'encyclopedia/create.html', {
-                "form": form
+                "duplicate": True, 
+                "form": form,
+                "title": title,
+                "alert": "This title already exist "
             })
-
+        return render(request, 'encyclopedia/create.html', {
+            "invalid": True, 
+            "form": form,
+            "alert": "Please fill in all the fields."
+        })
     return render(request, "encyclopedia/create.html", {
         "form": forms.NewEntryForm()
     })
