@@ -10,25 +10,9 @@ Create New Page
 <h1 style="text-align: center;">Create New Entry</h1>
 <br>
 
-<form action="{% url 'create' %}" method="POST">
+<form>
     {% csrf_token %}
     {% crispy form %}
-</form>
-
-
-<form >
-    {% csrf_token %}
-    <div class="form-group col-8 offset-2">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Page Title" autocomplete="off" >
-    </div>
-    <div class="form-group col-8 offset-2">
-        <label for="content">Content</label>
-        <textarea class="form-control" name="content" id="content" rows="10" placeholder="Enter Page Content"></textarea>
-    </div>
-    <div class="form-group col-10">
-        <button type="submit" class="btn btn-primary float-right">Create Page</button>
-    </div>
 </form>
 
 {% endblock %}

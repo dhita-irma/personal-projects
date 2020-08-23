@@ -1,26 +1,23 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Row, Column, Div
+from crispy_forms.layout import Layout, Submit, Div, Field
 
 
 class NewEntryForm(forms.Form):
-    title = forms.CharField(
-        label="Title", 
-        widget=forms.TextInput(attrs={
-            'placeholder': 'Enter Title', 
-            'autocomplete': 'off'
-            }))
+    title = forms.CharField(label="Title")
     body = forms.CharField(
-        label="Content", 
-        widget=forms.Textarea(attrs={'placeholder': 'Enter Page Content'}))
+        label="Content",
+        widget=forms.Textarea)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.form_action = "{% url 'create' %}"
+        self.helper.form_method = 'POST'
         self.helper.layout = Layout(
             Div(
-                'title', 
-                'body', 
+                Field('title', placeholder='Enter Title', autocomplete='off'),
+                Field('body', placeholder='Enter Page Content'), 
                 Submit('submit', 'Create Entry', css_class='btn btn-primary float-right'), 
                 css_class='form-group col-8 offset-2'
             )
