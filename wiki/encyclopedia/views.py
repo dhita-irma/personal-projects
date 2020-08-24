@@ -12,11 +12,18 @@ entries = util.list_entries()
 
 
 def index(request):
+    """
+    Render index.html showing sorted list of entry in the encyclopedia. 
+    """
     return render(request, "encyclopedia/index.html", {
         "entries": sorted(entries)
     })
 
 def entry(request, title):
+    """
+    Render a page that displays the contents of encyclopedia entry specified in wiki/TITLE.
+    If TITLE does not exist in the entry list, render error page.
+    """
     if util.is_entry(entries, title):
         return render(request, "encyclopedia/entry.html", {
             "content": markdowner.convert(str(util.get_entry(title))),
@@ -25,6 +32,11 @@ def entry(request, title):
     return render(request, "encyclopedia/error.html" )
 
 def search(request):
+    """
+    Redirect to entry page that user type in the search box. 
+    If query does not exist, render Search Result page that list all encyclopedia
+    entries that have the query as substring. 
+    """
     if request.method == "GET":
         q = request.GET.get("q")
         if not util.is_entry(entries, q):
@@ -36,6 +48,12 @@ def search(request):
         return redirect(reverse("entry", args=[q]))
 
 def create(request):
+    """
+    Render a page displaying a form to create new entry. 
+    On "POST": 
+        If title already exists, show alerts and display the form back to user.
+        Otherwise, save entry to disk and redirect user to the new entry's page. 
+    """
     if request.method == "POST":
         form = forms.NewEntryForm(request.POST)
         if form.is_valid():
@@ -66,10 +84,20 @@ def create(request):
         })
 
 def random_page(request):
+    """
+    Redirect user to a random encyclopedia entry. 
+    """
     entry = random.choice(entries)
     return redirect(reverse("entry", args=[entry]))
 
 def edit(request, title):
+    """
+    Render a page to edit entry, 
+    displaying a form pre-populated with the existing Markdown content of the page.
+    On "POST":
+        Rename title and content of the file on disk. 
+        Redirect user to that entry's page. 
+    """
     if request.method == "POST":
         form = forms.NewEntryForm(request.POST)
         if form.is_valid():
