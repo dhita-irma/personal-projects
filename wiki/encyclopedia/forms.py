@@ -7,7 +7,8 @@ class NewEntryForm(forms.Form):
     title = forms.CharField(label="Title")
     body = forms.CharField(
         label="Content",
-        widget=forms.Textarea)
+        widget=forms.Textarea
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

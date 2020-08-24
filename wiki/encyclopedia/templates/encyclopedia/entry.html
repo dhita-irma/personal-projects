@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block body %}
+    <div class="content">
+        {{ content|safe }}
+        <br>
+        <a href="/edit/{{ title }}">Edit Page</a>
+    </div>
 
-    {{ content|safe }}
-
-    <br>
-    <a href="/edit/{{ title }}">Edit Page</a>
+ 
 
 {% endblock %}

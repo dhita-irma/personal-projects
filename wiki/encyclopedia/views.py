@@ -9,16 +9,15 @@ import random
 
 markdowner = Markdown()
 entries = util.list_entries()
-entries_lowercaps = [entry.lower() for entry in entries]
 
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
-        "entries": entries
+        "entries": sorted(entries)
     })
 
 def entry(request, title):
-    if title.lower() in entries_lowercaps:
+    if util.is_entry(entries, title):
         return render(request, "encyclopedia/entry.html", {
             "content": markdowner.convert(str(util.get_entry(title))),
             "title": title
@@ -28,7 +27,7 @@ def entry(request, title):
 def search(request):
     if request.method == "GET":
         q = request.GET.get("q")
-        if q.lower() not in entries_lowercaps:
+        if not util.is_entry(entries, q):
             results = [entry for entry in entries if q.lower() in entry.lower()]
             return render(request, "encyclopedia/search.html", {
                 "results": results, 
@@ -42,11 +41,12 @@ def create(request):
         if form.is_valid():
             title = form.cleaned_data["title"]
             body = form.cleaned_data["body"]
-            if title.lower() not in entries_lowercaps:
+            if not util.is_entry(entries, title):
                 filepath = os.path.join("entries", f"{title}.md")
                 f = open(filepath, "w")
                 f.write(body)
                 f.close()
+                entries.append(title)
                 return redirect(reverse("entry", args=[title]))
             return render(request, 'encyclopedia/create.html', {
                 "duplicate": True, 
@@ -83,6 +83,7 @@ def edit(request, title):
             file.close()
             if title != new_title:
                 os.rename(filepath, os.path.join("entries", f"{new_title}.md"))
+                entries[entries.index(title)] = new_title
             return redirect(reverse("entry", args=[new_title]))
 
     else:
@@ -90,10 +91,8 @@ def edit(request, title):
         with open(filepath, 'r') as file:
             body = file.read()
 
+        data = {'title': title, 'body': body}
         return render(request, 'encyclopedia/edit.html', {
             "title": title,
-            "form": forms.NewEntryForm({
-                'title': title,
-                'body': body
-            })
+            "form": forms.NewEntryForm(data)
         })

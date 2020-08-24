@@ -35,3 +35,9 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def is_entry(entries, title):
+    """
+    Return true if title exists in entries list.
+    """
+    return title.lower() in [entry.lower() for entry in entries]
