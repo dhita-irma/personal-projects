@@ -8,7 +8,7 @@
     <div class="content">
         {{ content|safe }}
         <br>
-        <a href="/edit/{{ title }}">Edit Page</a>
+        <a href="{% url 'edit' title %}">Edit Page</a>
     </div>
 
  

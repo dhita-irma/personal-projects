@@ -11,7 +11,7 @@
         
         <ul class="content">
         {% for entry in entries %}
-            <li><a href="wiki/{{ entry }}">{{ entry }} </a></li>
+            <li><a href="{% url 'entry' entry %}">{{ entry }} </a></li>
         {% endfor %}
         </ul>     
     </div>

@@ -18,7 +18,7 @@ Edit Page: {{ title }}
     </div>
 {% endif %}
 
-<form action="/edit/{{ title }}" method="POST">
+<form action="{% url 'edit' title %}" method="POST">
     {% csrf_token %}
     {% crispy form %}
 </form>

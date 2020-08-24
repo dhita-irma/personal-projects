@@ -13,7 +13,7 @@ Create New Page
 {% if duplicate == True %}
     <div class="col-8 offset-2">
         <div class="alert alert-warning" role="alert">
-            {{ alert }}<a href="/wiki/{{ title }}" class="alert-link">click here</a> to check it out.
+            {{ alert }}<a href="{% url 'entry' title %}" class="alert-link">click here</a> to check it out.
         </div>
     </div>
 {% endif %}

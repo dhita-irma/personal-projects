@@ -39,11 +39,14 @@ ul {
 }
 
 .sidebar h2 {
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.padding {
+    padding-left: 10px;
 }
 
 .content {
-    padding-top: 10px;
     padding-left: 20px;
     padding-right: 40px;
 }
