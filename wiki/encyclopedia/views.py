@@ -4,7 +4,6 @@ from django.urls import reverse
 from markdown2 import Markdown
 from . import util
 from . import forms
-import os
 import random
 
 markdowner = Markdown()
@@ -24,9 +23,12 @@ def entry(request, title):
     Render a page that displays the contents of encyclopedia entry specified in wiki/TITLE.
     If TITLE does not exist in the entry list, render error page.
     """
+    # convert Markdown content to HTML 
+    content = markdowner.convert(str(util.get_entry(title)))
+    
     if util.is_entry(entries, title):
         return render(request, "encyclopedia/entry.html", {
-            "content": markdowner.convert(str(util.get_entry(title))),
+            "content": content,
             "title": title
         })
     return render(request, "encyclopedia/error.html" )
@@ -60,10 +62,7 @@ def create(request):
             title = form.cleaned_data["title"]
             body = form.cleaned_data["body"]
             if not util.is_entry(entries, title):
-                filepath = os.path.join("entries", f"{title}.md")
-                f = open(filepath, "w")
-                f.write(body)
-                f.close()
+                util.save_entry(title, body)
                 entries.append(title)
                 return redirect(reverse("entry", args=[title]))
             return render(request, 'encyclopedia/create.html', {
@@ -103,23 +102,15 @@ def edit(request, title):
         if form.is_valid():
             new_title = form.cleaned_data["title"]
             new_body = form.cleaned_data["body"]
-            filepath = os.path.join("entries", f"{title}.md")
-            with open(filepath, 'w+') as file:
-                body = file.read()
-                if body != new_body:
-                    file.write(new_body)
-            file.close()
             if title != new_title:
-                os.rename(filepath, os.path.join("entries", f"{new_title}.md"))
+                util.delete_entry(title)
                 entries[entries.index(title)] = new_title
+            util.save_entry(new_title, new_body)
             return redirect(reverse("entry", args=[new_title]))
-
     else:
-        filepath = os.path.join("entries", f"{title}.md")
-        with open(filepath, 'r') as file:
-            body = file.read()
-
+        body = util.get_entry(title)
         data = {'title': title, 'body': body}
+
         return render(request, 'encyclopedia/edit.html', {
             "title": title,
             "form": forms.NewEntryForm(data)
