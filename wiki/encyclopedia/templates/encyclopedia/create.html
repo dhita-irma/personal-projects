@@ -1,0 +1,34 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Create New Page
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center;">Create New Entry</h1>
+<br>
+
+{% if duplicate == True %}
+    <div class="col-8 offset-2">
+        <div class="alert alert-warning" role="alert">
+            {{ alert }}<a href="{% url 'entry' title %}" class="alert-link">click here</a> to check it out.
+        </div>
+    </div>
+{% endif %}
+
+{% if invalid == True %}
+    <div class="col-8 offset-2">
+        <div class="alert alert-warning" role="alert">
+            {{ alert }}
+        </div>
+    </div>
+{% endif %}
+
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+
+{% endblock %}

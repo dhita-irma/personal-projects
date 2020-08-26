@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Edit Page: {{ title }}
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center;">Edit Page</h1>
+<br>
+
+<form action="{% url 'edit' title %}" method="POST">
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+
+{% endblock %}

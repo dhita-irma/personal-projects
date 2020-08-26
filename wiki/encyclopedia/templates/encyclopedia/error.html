@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Page Not Found 
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>Not Found</h1>
+
+        The requested page is not found. 
+        <br><br>
+        <a href="{% url 'create' %}">Create Page</a>        
+    </div>
+
+
+{% endblock %}
